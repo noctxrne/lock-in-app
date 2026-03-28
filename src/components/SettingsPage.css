@@ -1,0 +1,119 @@
+.settings-page {
+  padding: 20px;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.settings-page h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: var(--text-primary);
+}
+
+.settings-section {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.settings-section h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.setting-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.setting-item label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.setting-item input[type="time"],
+.setting-item input[type="number"] {
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  min-width: 120px;
+  text-align: center;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.setting-item input[type="time"]:focus,
+.setting-item input[type="number"]:focus {
+  border-color: #1A4C7A;
+  outline: none;
+  box-shadow: 0 0 0 3px #E8F0F8;
+}
+
+:root[data-theme="dark"] .setting-item input[type="time"]:focus,
+:root[data-theme="dark"] .setting-item input[type="number"]:focus {
+  border-color: #3A8CBA;
+  box-shadow: 0 0 0 3px #1A4C7A;
+}
+
+.setting-item input[type="time"]::placeholder,
+.setting-item input[type="number"]::placeholder {
+  color: var(--text-secondary);
+}
+
+.setting-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #1A5C1A;
+}
+
+:root[data-theme="dark"] .setting-item input[type="checkbox"] {
+  accent-color: #E8F4E8;
+}
+
+.info {
+  background: #E8F4E8;
+  border-left: 4px solid #1A5C1A;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #1A5C1A;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root[data-theme="dark"] .info {
+  background: #1A5C1A;
+  border-left-color: #E8F4E8;
+  color: #E8F4E8;
+}
+
+.info p {
+  margin: 0;
+  font-weight: 500;
+}
