@@ -3,11 +3,13 @@ import { usePunchSession } from '../hooks/usePunchSession';
 import { SessionContext } from '../context/SessionContext';
 import { formatTime, formatDuration } from '../services/timeCalculations';
 import './PunchPage.css';
+import { LogsModal } from './LogsModal';
 
 export function PunchPage() {
   const { isPunchedIn, isOnBreak, punchInTime, breaks, punchIn, breakIn, breakOut, punchOut } = usePunchSession();
   const { settings } = useContext(SessionContext);
   const [elapsedTime, setElapsedTime] = useState(0);
+  const [showLogsModal, setShowLogsModal] = useState(false); // ✅ ADDED
 
   useEffect(() => {
     if (!isPunchedIn) return;
@@ -99,6 +101,20 @@ export function PunchPage() {
           </div>
         </div>
       )}
+
+      {/* ✅ ADDED BUTTON */}
+      <button 
+        className="quick-access-button"
+        onClick={() => setShowLogsModal(true)}
+      >
+        📋 View & Edit Logs for Today
+      </button>
+
+      {/* ✅ ADDED MODAL */}
+      <LogsModal 
+        isOpen={showLogsModal} 
+        onClose={() => setShowLogsModal(false)} 
+      />
     </div>
   );
 }
